@@ -7,7 +7,7 @@ inputs:
   vendor-api-key:
     description: >-
       Deployment vendor API key (currently LinearB)
-    required: true
+    required: false
   deployment-sha:
     description: >-
       The git sha of the deployment to track
@@ -39,7 +39,6 @@ runs:
           sha = '${{ inputs.deployment-sha }}'
           repoUrl = '${{ inputs.repository-url }}'
           env = '${{ inputs.environment }}'
-          vendorKey = '${{ inputs.vendor-api-key }}'
         }
 
         $deploymentDateTimeOffset = '${{ inputs.deployment-date-time-offset }}'
